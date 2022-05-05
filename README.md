@@ -8,6 +8,12 @@
 - [Doug McKenzie Jazz Piano MIDI Dataset](https://bushgrafts.com/midi/)
   - MIDI transcriptions of about 300 jazz tunes
 
+## Saved data (for skipping processing steps)
+- `wilding-corpus.txt` can be downloaded directly from the first link above
+- `piano-midi/` (MIDI files containing only piano parts) can be downloaded [here](https://drive.google.com/drive/folders/1pMBvfYFsDrTZYb45VK8-DM10kmqfChtd?usp=sharing)
+- `corpus-pairs-txt/` can be dowloaded [here](https://drive.google.com/drive/folders/1rsGXqeGndFdUKdxxRC-BJRL3yg6n7Y0f?usp=sharing) for notebooks 9 and 10
+- `chords-txt-augmented/` can be downloaded [here](https://drive.google.com/drive/folders/1JFZck4t0GE_dv5T6Akpj3eQEGBf59w56?usp=sharing) for notebooks 11 and 12
+
 ## Music Theory Background
 Most music can be broken down into two components; melody and harmony. The melody is often the highest and most noticeable part in the music, and is typically what you would sing if someone asked you to remind them of a song. The harmony can be usually thought of as a series of chords that set the "foundation" for the melody and the song as a whole. Guitarists and pianists will often play the chords to a song (the harmony) while singing the melody.
 
