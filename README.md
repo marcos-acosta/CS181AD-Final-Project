@@ -1,5 +1,7 @@
 # CS181AD Final Project
 
+[VIDEO PRESENTATION](https://hmc-edu.zoom.us/rec/share/H_GY6FQBTuTaEYPSpkeHceU65898CmxveNc8rNiM4wFnd4t0n25JZdWX3-QQm3BH.jDzDVWmxXYriZO0B)
+
 **Project description:** Explore the ways in which traditional NLP techniques can be applied to the "language" of jazz music, particularly jazz piano.
 
 ## Datasets
