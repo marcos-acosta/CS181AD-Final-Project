@@ -34,17 +34,7 @@ For example, the chord `Eb G Bb D`, would be represented as `<chord> Eb,G Eb,Bb 
 
 Empirically, the results sounded more or less reasonable on the piano, but I found that many generated timesteps were useless because in the original dataset, the pianist's fingers may not all release at the same time, resulting in timesteps where notes are simply dropping out, one by one. As a result, the model learned a similar pattern, which is besides the point, since the model should ideally be learning the transition from one chord to the next, not from a chord to each individual finger releasing. This inspired the changes which resulted in the final model.
 
-Despite the large vocabulary size (compared to the chord symbol dataset), the embeddings could still be projected into 3D space. Interestingly, it appears that intervals were largely clumped by their register (lower registers mean lower notes on the piano). The following images illustrate queries on the embedding space by register.
-
-<img src="images/octave-0.png" width="200px">
-<img src="images/octave-1.png" width="200px">
-<img src="images/octave-2.png" width="200px">
-<img src="images/octave-3.png" width="200px">
-<img src="images/octave-4.png" width="200px">
-<img src="images/octave-5.png" width="200px">
-<img src="images/octave-6.png" width="200px">
-<img src="images/octave-7.png" width="200px">
-<img src="images/octave-8.png" width="200px">
+Despite the large vocabulary size (compared to the chord symbol dataset), the embeddings could still be projected into 3D space. Interestingly, it appears that intervals were largely clumped by their register (lower registers mean lower notes on the piano). Images illustrate queries on the embedding space by register can be found in `images/` as `octave-0.png`, `octave-1.png`, and so on.
 
 Also, some intervals grouped in the same embedding space. For examples, octaves (e.g. C4 to C5) are clumped together in one corner of the space.
 
@@ -67,3 +57,8 @@ The model actually generated pleasing results. For example, the following two ex
 
 ## Conclusion
 
+The best results so far (at least aurally) were produced by limiting the range of notes considered, augmenting the data by transposing, and applying algorithms to reduce unnecessary noise in raw MIDI jazz piano. This implies that jazz piano harmony can certainly be learned (or rather, mimicked) by a sufficiently complex language model.
+
+However, it's not clear whether the chord embeddings actually demonstrate an understanding of how chords function in the context of jazz. For example, while a model could generate the circle of fifths (see LSTM example), the embeddings themselves did not reconstruct the circle of fifths, nor did similar chords appear to be clustered. This may have to do, again, with the size of the data, or the method used to deconstruct chords into more atomic pieces.
+
+In the future, I'd like to explore more clever ways of deconstructing chords into smaller elements in a way more analagous to how a human might think about it. For example, two chords that differ only in key should be semantically related, and so on. I would also like to re-attempt training a VAE, since the idea of varying the latent vector and getting slightly different interpretations of the same music sounds very exciting, but would require a very clever design. I attempted implementing a recurrent VAE, but it did not perform well, likely because of how I designed it. The notebook is included in the GitHub but not documented like the others.
